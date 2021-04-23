@@ -43,22 +43,19 @@
                     </div>
                 </div>
 
-                <div class="flex px-2 py-6">
-                    <a href="#" class="flex-none">
-                        <img src="https://source.unsplash.com/200x200/?face&crop=face&v=1" alt="avatar" class="w-14 h-14 rounded-xl">
-                    </a>
-                    <div class="mx-4">
+                <div class="flex flex-1 px-2 py-6">
+                    <div class="flex-none">
+                        <a href="#">
+                            <img src="https://source.unsplash.com/200x200/?face&crop=face&v=1" alt="avatar" class="w-14 h-14 rounded-xl">
+                        </a>
+                    </div>
+                    <div class="mx-4 w-full">
                         <h4 class="text-xl font-semibold">
                             <a href="" class="hover:underline">Title go here</a>
                         </h4>
 
                         <div class="text-gray-600 mt-3 line-clamp-3">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores libero dolore similique? Culpa reprehenderit, 
-                            nam nobis veniam ducimus, numquam commodi eos ipsum, dolores fugit consequuntur. 
-                            Distinctio cupiditate similique, quis fugit delectus eligendi exercitationem iste assumenda mollitia harum iure
-                             aspernatur maxime dolores aliquam dolor beatae hic qui error ipsa impedit. 
-                             Quo id numquam ducimus soluta ab voluptatibus delectus voluptatum iure! Sed accusantium, eligendi voluptatibus ut illo eaque.
-                             Ipsum voluptates, blanditiis porro placeat iusto dicta pariatur aut explicabo nemo cumque temporibus perspiciatis sapiente, itaque minus quos rerum mollitia possimus. Quisquam odit modi nulla itaque voluptatum dolorum molestias voluptates minima doloremque, aliquam nemo?
+                            Lorem ipsum, dolor sit amet 
                         </div>
 
                         <div class="flex items-center justify-between mt-6">
