@@ -28,6 +28,67 @@
                     </svg>
                 </div>
             </div>
-        </div>
+        </div> <!-- End filters -->
+
+        <div class="ideas-containers space-y-6 my-6">
+            <div class="idea-container hover:shadow-card transition duration-150 ease-in bg-white rounded-xl flex cursor-pointer">
+                <div class="border-r border-gray-100 px-5 py-8">
+                    <div class="text-center">
+                        <div class="font-semibold text-2xl">12</div>
+                        <div class="text-gray-500">Votes</div>
+                    </div>
+
+                    <div class="mt-8">
+                        <button class="w-20 bg-gray-200 border border-gray-200 hover:border-gray-400 font-bold text-xs uppercase rounded-xl transition duration-150 ease-in px-4 py-3">vote</button>
+                    </div>
+                </div>
+
+                <div class="flex px-2 py-6">
+                    <a href="#" class="flex-none">
+                        <img src="https://source.unsplash.com/200x200/?face&crop=face&v=1" alt="avatar" class="w-14 h-14 rounded-xl">
+                    </a>
+                    <div class="mx-4">
+                        <h4 class="text-xl font-semibold">
+                            <a href="" class="hover:underline">Title go here</a>
+                        </h4>
+
+                        <div class="text-gray-600 mt-3 line-clamp-3">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores libero dolore similique? Culpa reprehenderit, 
+                            nam nobis veniam ducimus, numquam commodi eos ipsum, dolores fugit consequuntur. 
+                            Distinctio cupiditate similique, quis fugit delectus eligendi exercitationem iste assumenda mollitia harum iure
+                             aspernatur maxime dolores aliquam dolor beatae hic qui error ipsa impedit. 
+                             Quo id numquam ducimus soluta ab voluptatibus delectus voluptatum iure! Sed accusantium, eligendi voluptatibus ut illo eaque.
+                             Ipsum voluptates, blanditiis porro placeat iusto dicta pariatur aut explicabo nemo cumque temporibus perspiciatis sapiente, itaque minus quos rerum mollitia possimus. Quisquam odit modi nulla itaque voluptatum dolorum molestias voluptates minima doloremque, aliquam nemo?
+                        </div>
+
+                        <div class="flex items-center justify-between mt-6">
+                            <div class="flex items-center text-xs text-gray-400 font-semibold space-x-2">
+                                <div>10 hours ago</div>
+                                <div>&bull;</div>
+                                <div>Category</div>
+                                <div>&bull;</div>
+                                <div class="text-gray-900">3 Comments</div>
+                            </div>
+
+                            <div class="flex items-center space-x-2">
+                                <div class="bg-gray-200 text-xxs font-bold uppercase leading-none rounded-full text-center w-28 h-7 transition duration-150 ease-in py-2 px-4">
+                                    Open
+                                </div>
+
+                                <button class="relative bg-gray-100 hover:bg-gray-200 rounded-full h-7">
+                                    Click
+                                    <ul class="absolute w-44 text-left ml-8 font-semibold bg-white shadow-dialog rounded-xl py-3">
+                                        <li><a href="" class="hover:bg-gray-100 block transition duration-150 ease-in px-5 py-3">Mark as spam</a></li>
+                                        <li><a href="" class="hover:bg-gray-100 block transition duration-150 ease-in px-5 py-3">Delete Post</a></li>
+                                    </ul>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div> <!-- End idea-containers -->
     </div>
 </x-app-layout>
