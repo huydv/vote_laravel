@@ -1,7 +1,7 @@
 <x-app-layout>
     <div>
-        <div class="filters flex space-x-6">
-            <div class="w-1/3">
+        <div class="filters flex flex-col md:flex-row">
+            <div class="w-full md:w-1/3">
                 <select name="category" id="category" class="w-full rounded-xl border-none px-4 py-2">
                     <option value="Category 1">Category 1</option>
                     <option value="Category 2">Category 2</option>
@@ -10,7 +10,7 @@
                 </select>
             </div>
 
-            <div class="w-1/3">
+            <div class="w-full md:w-1/3">
                 <select name="other_filters" id="other_filters" class="w-full rounded-xl border-none px-4 py-2">
                     <option value="Filter 1">Filter 1</option>
                     <option value="Filter 2">Filter 2</option>
@@ -19,7 +19,7 @@
                 </select>
             </div>
             
-            <div class="w-2/3 relative">
+            <div class="w-full md:w-2/3 relative">
                 <input type="search" placeholder="Find an idea" class="w-full rounded-xl bg-white border-none placeholder-gray-900 px-4 py-2 pl-8">
                     
                 <div class="absolute top-0 flex items-center h-full ml-2">
@@ -49,7 +49,7 @@
                             <img src="https://source.unsplash.com/200x200/?face&crop=face&v=1" alt="avatar" class="w-14 h-14 rounded-xl">
                         </a>
                     </div>
-                    <div class="mx-4 w-full">
+                    <div class="mx-4 w-full flex flex-col justify-between">
                         <h4 class="text-xl font-semibold">
                             <a href="" class="hover:underline">Title go here</a>
                         </h4>
