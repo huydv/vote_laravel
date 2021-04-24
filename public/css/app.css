@@ -25885,6 +25885,10 @@ select {
   -webkit-line-clamp: unset;
 }
 
+[x-cloak] {
+  display: none impor !important;
+}
+
 .comments-container::before {
   position: absolute;
   display: block;

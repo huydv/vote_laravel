@@ -67,14 +67,23 @@
                                 <div class="text-gray-900">3 Comments</div>
                             </div>
 
-                            <div class="flex items-center space-x-2">
+                            <div 
+                                x-data="{ isOpen: false }"
+                                class="flex items-center space-x-2">
                                 <div class="bg-gray-200 text-xxs font-bold uppercase leading-none rounded-full text-center w-28 h-7 transition duration-150 ease-in py-2 px-4">
                                     Open
                                 </div>
 
-                                <button class="relative bg-gray-100 hover:bg-gray-200 rounded-full h-7">
+                                <button 
+                                    @click="isOpen = !isOpen"
+                                    class="relative bg-gray-100 hover:bg-gray-200 rounded-full h-7">
                                     Click
-                                    <ul class="absolute w-44 text-left ml-8 font-semibold bg-white shadow-dialog rounded-xl py-3">
+                                    <ul 
+                                        x-cloak
+                                        x-show.transition.top.left="isOpen"
+                                        @click.away="isOpen = false"
+                                        @keydown.escape.window="isOpen = false"
+                                        class="absolute w-44 text-left ml-8 font-semibold bg-white shadow-dialog rounded-xl py-3">
                                         <li><a href="" class="hover:bg-gray-100 block transition duration-150 ease-in px-5 py-3">Mark as spam</a></li>
                                         <li><a href="" class="hover:bg-gray-100 block transition duration-150 ease-in px-5 py-3">Delete Post</a></li>
                                     </ul>
