@@ -38,8 +38,10 @@
                     <div
                         x-data="{ isOpen: false }"
                         class="flex items-center space-x-2">
-                        <div class="px-4 py-2 font-bold leading-none text-center uppercase transition duration-150 ease-in bg-gray-200 rounded-full text-xxs w-28 h-7">
-                            Open
+                        <div
+                            class=" {{ $idea->status->classes }}
+                                px-4 py-2 font-bold leading-none text-center uppercase transition duration-150 ease-in bg-gray-200 rounded-full text-xxs w-30 h-7">
+                            {{ $idea->status->name }}
                         </div>
 
                         <button
