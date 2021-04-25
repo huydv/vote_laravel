@@ -45,4 +45,13 @@ class User extends Authenticatable
     {
         return $this->hasMany(Idea::class);
     }
+
+    public function getAvatar()
+    {
+        return 'https://1.gravatar.com/avatar/'
+        . md5($this->email)
+        .'?s=200'
+        .'&d=mp';
+        // return 'https://source.unsplash.com/200x200/?face&crop=face&v=1';
+    }
 }
