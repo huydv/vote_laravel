@@ -18,8 +18,8 @@
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
     </head>
-    <body class="font-sans bg-gray-background text-gray-900 text-sm">
-        <header class="flex flex-col md:flex-row items-center justify-between px-8 py-4">
+    <body class="font-sans text-sm text-gray-900 bg-gray-background">
+        <header class="flex flex-col items-center justify-between px-8 py-4 md:flex-row">
         <a href="#"><img src="{{ asset('img/logo.svg') }}" alt=""></a>
         <div class="flex items-center mt-2 md:mt-0">
             @if (Route::has('login'))
@@ -33,7 +33,7 @@
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
                                 {{ __('Log out') }}
-                            </a
+                            </a>
                         </form>
                     @else
                         <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Log in</a>
@@ -51,58 +51,46 @@
         </div>
         </header>
 
-        <main class="container mx-auto max-w-custom flex flex-col md:flex-row">
-            <div class="w-70 mx-auto md:mx-1 md:mr-5">
-                <div class="bg-white md:sticky md:top-8 border-2 border-blue rounded-xl mt-16">
-                    <div class="text-center px-6 py-2 pt-6">
-                        <h3 class="font-semibold text-base">Add and idea</h3>
-                        <p class="text-xs mt-4">Let us know what you would like and we'll take a look over!</p>
+        <main class="container flex flex-col mx-auto max-w-custom md:flex-row">
+            <div class="mx-auto w-70 md:mx-1 md:mr-5">
+                <div class="mt-16 bg-white border-2 md:sticky md:top-8 border-blue rounded-xl">
+                    <div class="px-6 py-2 pt-6 text-center">
+                        <h3 class="text-base font-semibold">Add and idea</h3>
+                        @auth
+                            <p class="mt-4 text-xs">Let us know what you would like and we'll take a look over!</p>
+                        @else
+                            Please login to create an idea
+                        @endauth
+
                     </div>
 
-                    <form action="#" method="POST" class="space-y-4 px-4 py-6">
-                        <div>
-                            <input type="text" class="w-full bg-gray-100 text-sm border-none rounded-xl placeholder-gray-900 px-4 py-2" placeholder="Your Idea">
+                    @auth
+                        <livewire:create-idea />
+                    @else
+                        <div class="my-6 text-center">
+                            <a href="{{ route('login') }}"
+                                class="inline-block w-1/2 px-6 py-3 text-xs font-semibold text-white transition duration-150 border bg-blue h-11 rounded-xl border-blue hover:bg-blue-hover">
+                                <span class="ml-1">Login</span>
+                            </a>
 
+                            <a href="{{ route('register') }}"
+                                class="inline-block w-1/2 px-6 py-3 mt-4 text-xs font-semibold text-white transition duration-150 border bg-blue h-11 rounded-xl border-blue hover:bg-blue-hover">
+                                <span class="ml-1">Sign Up</span>
+                            </a>
                         </div>
-                        <div>
-                            <select name="category_add" id="category_add" class="w-full bg-gray-100 text-sm rounded-xl border-none px-4 py-2">
-                                <option value="Category 1">Category 1</option>
-                                <option value="Category 2">Category 2</option>
-                                <option value="Category 3">Category 3</option>
-                                <option value="Category 4">Category 4</option>
-                            </select>
-                        </div>
+                    @endauth
 
-                        <div>
-                            <textarea name="idea" id="idea" cols="30" rows="4" class="w-full bg-gray-100 rounded-xl placeholder-gray-900 text-sm px-4 py-2" placeholder="Describle your idea"></textarea>
-                        </div>
-
-                        <div class="flex items-center justify-between spcae-x-3">
-                            <button type="button" class="flex items-center justify-center w-1/2 h-11 text-xs bg-gray-200 font-semibold rounded-xl border border-gray-200 hover:border-gray-400 transition duration-150 ">
-                                <svg class="text-gray-600 h-5 w-5 transform -rotate-45" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13" />
-                                </svg>
-                                <span class="ml-2">Attach</span>
-                            </button>
-
-
-                            <button type="button" class="flex items-center justify-center w-1/2 h-11 text-xs bg-blue text-white font-semibold rounded-xl border border-blue hover:bg-blue-hover transition duration-150 ">
-                                <span class="ml-2">Submit</span>
-                            </button>
-                        </div>
-
-                    </form>
                 </div>
             </div>
 
             <div class="w-175">
-                <nav class="hidden md:flex items-center justify-between text-xs">
-                    <ul class="flex uppercase font-semibold border-b-4 pb-3 space-x-10">
-                        <li><a href="" class="border-b-4 pb-3 border-blue">All Ideas(87)</a></li>
-                        <li><a href="" class="text-gray-400 transition duration-150 ease-in border-b-4 pb-3 hover:border-blue">Considering(6)</a></li>
-                        <li><a href="" class="text-gray-400 transition duration-150 ease-in border-b-4 pb-3 hover:border-blue">Inprogress(1)</a></li>
-                        <li><a href="" class="text-gray-400 transition duration-150 ease-in border-b-4 pb-3 hover:border-blue">Implemented(6)</a></li>
-                        <li><a href="" class="text-gray-400 transition duration-150 ease-in border-b-4 pb-3 hover:border-blue">Closed(6)</a></li>
+                <nav class="items-center justify-between hidden text-xs md:flex">
+                    <ul class="flex pb-3 space-x-10 font-semibold uppercase border-b-4">
+                        <li><a href="" class="pb-3 border-b-4 border-blue">All Ideas(87)</a></li>
+                        <li><a href="" class="pb-3 text-gray-400 transition duration-150 ease-in border-b-4 hover:border-blue">Considering(6)</a></li>
+                        <li><a href="" class="pb-3 text-gray-400 transition duration-150 ease-in border-b-4 hover:border-blue">Inprogress(1)</a></li>
+                        <li><a href="" class="pb-3 text-gray-400 transition duration-150 ease-in border-b-4 hover:border-blue">Implemented(6)</a></li>
+                        <li><a href="" class="pb-3 text-gray-400 transition duration-150 ease-in border-b-4 hover:border-blue">Closed(6)</a></li>
                     </ul>
                 </nav>
 
