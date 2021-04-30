@@ -14,15 +14,13 @@ class IdeasIndex extends Component
     public function render()
     {
         $statuses = Status::all()->pluck('id', 'name');
-        // ddd(request()->status);
         $needQueryStatus = request()->status != null && request()->status != 'All';
-        // ddd($noNeedQueryStatus);
-        // ddd($statuses->get(request()->status));
+
         return view(
             'livewire.ideas-index',
             [
                 'ideas' => Idea::with('user', 'category', 'status')
-                            ->when(!$needQueryStatus, function ($query) use ($statuses) {
+                            ->when($needQueryStatus, function ($query) use ($statuses) {
                                 return $query->where('status_id', $statuses->get(request()->status));
                             })
                             ->addSelect(['voted_by_user' => Vote::select('id')
