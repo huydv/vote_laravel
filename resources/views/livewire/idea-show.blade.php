@@ -200,12 +200,14 @@
 
             @if($hasVoted)
                 <button type="button"
+                    wire:click.prevent="vote"
                     class="w-32 px-6 py-3 text-xs font-semibold text-white uppercase transition duration-150 border bg-blue border-blue h-11 rounded-xl hover:bg-blue-hover">
                     <span>Voted</span>
 
                 </button>
             @else
                 <button type="button"
+                    wire:click.prevent="vote"
                     class="w-32 px-6 py-3 text-xs font-semibold uppercase transition duration-150 bg-gray-200 border border-gray-200 h-11 rounded-xl hover:border-gray-400">
                     <span>Vote</span>
 
